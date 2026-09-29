@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "crossfield-lint"
+version = "0.1.0"
+description = "Find pydantic v2 field validators that read info.data for a field that isn't validated yet."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "__AUTHOR__"}]
+keywords = ["pydantic", "lint", "static-analysis", "ast", "validator", "pre-commit"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Typing :: Typed",
+]
+dependencies = [
+    "pydantic>=2.0",
+]
+
+[project.urls]
+Repository = "https://github.com/__GH_OWNER__/crossfield-lint"
+
+[project.scripts]
+crossfield-lint = "crossfield_lint.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "mypy>=1.10",
+    "pydantic-settings>=2.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/crossfield_lint"]
+
+[tool.mypy]
+strict = true
+files = ["src", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

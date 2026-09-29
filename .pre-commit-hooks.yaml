@@ -1,0 +1,7 @@
+- id: crossfield-lint
+  name: crossfield-lint
+  description: Find pydantic v2 field validators that read info.data before that field is validated.
+  entry: crossfield-lint
+  language: python
+  types: [python]
+  require_serial: true
