@@ -105,7 +105,7 @@ crossfield-lint src/models.py --format json
 
 ```yaml
 repos:
-  - repo: https://github.com/__GH_OWNER__/crossfield-lint
+  - repo: https://github.com/quietpelican42/crossfield-lint
     rev: v0.1.0
     hooks:
       - id: crossfield-lint
